@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let word = "Usa";
+  function checkCapital(word) {
+    if (word === word.toUpperCase()) return true;
+    if (word === word.toLowerCase()) return true;
+
+    const isFirstLeCapi =
+      word.charCodeAt(0) >= 65 && word.charCodeAt(0) <= 90 ? true : false;
+    if (!isFirstLeCapi) return false;
+    for (let i = 1; i < word.length; i++) {
+      const isUpperCase =
+        word.charCodeAt(i) >= 65 && word.charCodeAt(i) <= 90 ? true : false;
+      if (isUpperCase) return false;
+    }
+    return true;
+  }
+  console.log(checkCapital(word));
+</script>
